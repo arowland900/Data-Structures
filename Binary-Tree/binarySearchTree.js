@@ -7,3 +7,11 @@ function treeSum(root){
     }
 }
 
+function treeMax(root){
+    if(!root) return Number.NEGATIVE_INFINITY 
+    else {
+        leftMax = treeMax(root.left)
+        rightMax = treeMax(root.right)
+        return Math.max(root.data, leftMax, rightMax)
+    }
+}
