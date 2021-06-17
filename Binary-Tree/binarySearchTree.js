@@ -15,3 +15,12 @@ function treeMax(root){
         return Math.max(root.data, leftMax, rightMax)
     }
 }
+
+function treeHeight(root){
+    if(!root) return 0
+    else {
+        leftHeight = treeHeight(root.left)
+        rightHeight = treeHeight(root.right)
+        return 1 + Math.max(leftHeight, rightHeight)
+    }
+}
