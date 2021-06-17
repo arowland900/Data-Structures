@@ -1,5 +1,5 @@
-function treeSum(root){
-    if(!root) return 0
+function treeSum(root) {
+    if (!root) return 0
     else {
         leftSum = treeSum(root.left)
         rightSum = treeSum(root.right)
@@ -7,8 +7,8 @@ function treeSum(root){
     }
 }
 
-function treeMax(root){
-    if(!root) return Number.NEGATIVE_INFINITY 
+function treeMax(root) {
+    if (!root) return Number.NEGATIVE_INFINITY
     else {
         leftMax = treeMax(root.left)
         rightMax = treeMax(root.right)
@@ -16,11 +16,20 @@ function treeMax(root){
     }
 }
 
-function treeHeight(root){
-    if(!root) return 0
+function treeHeight(root) {
+    if (!root) return 0
     else {
         leftHeight = treeHeight(root.left)
         rightHeight = treeHeight(root.right)
         return 1 + Math.max(leftHeight, rightHeight)
+    }
+}
+
+function existsInTree(root, value) {
+    if (!root) return false
+    else {
+        inLeft = existsInTree(root.left)
+        inRight = existsInTree(root.right)
+        return (root.data == value || inLeft || inRight)
     }
 }
