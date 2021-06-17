@@ -33,3 +33,12 @@ function existsInTree(root, value) {
         return (root.data == value || inLeft || inRight)
     }
 }
+
+function reverseTree(root){
+    if(!root) return
+    else {
+        reverseTree(root.left)
+        reverseTree(root.right)
+        root.left, root.right = root.right, root.left
+    }
+}
